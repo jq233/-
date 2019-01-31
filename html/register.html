@@ -35,29 +35,52 @@
 <script src="../js/jquery.min.js"></script>
 <script src="../js/ft-carousel.min.js"></script>
 <script type="text/javascript">
+
 	var w=window.screen.availWidth;
 	$('.wrapper').css('width',w-17+"px");
+
+	
+   function check(){ 
+	   		var flag=0;
+            var myform = document.getElementById("registerFrom"); 
+	   		var aSpan=document.getElementsByTagName("span");
+	   for(var i=0;i<aSpan.length;i++){
+		   aSpan[i].innerHTML= "";
+	   }
+            for(var i=0;i<myform.length;i++){  //循环form表单
+				  //aSpan[i].innerHTML= "";
+                  if(myform.elements[i].value==""){
+					    aSpan[i].innerHTML= "*不能为空";
+                        myform.elements[i].focus(); 
+					  	flag++;
+                  }
+            }if(flag!=0)return;
+	      	 if((myform.elements[3]!=""&&myform.elements[4].value!="")&&myform.elements[3].value!=myform.elements[4].value){
+					aSpan[4].innerHTML= "*两次密码输入不一致";
+					return;
+				}
+            myform.submit();
+      }
+	
 </script>
 		  <div class="main">
 	<a href="company_register.html"><div class="company"><table><tr><td width="30%">
 		<img src="../img/company.png" width="70%"alt=""/></td><td align="right">企业级注册 </td></tr></table></div></a>
-<form action="process.aspx"method="post">
-<table style="font-size: 20px">
-<tr height=60px ><td width="40%">用户名：</td><td colspan="2"><input type="text"name="yourname" style="background:transparent; height:35px;border:1px solid #faa0b1"  /></td></tr>
-
-<tr height=60px><td>电话号码：</td><td  colspan="2"><input type="text"name="yournumber"style="background:transparent; height:35px; border:1px solid #faa0b1" /></td></tr>
+<form action="process.aspx"method="post" id="registerFrom">
+<table style="font-size: 20px" width="20%">
+<tr height=60px ><td width="10%">用户名：</td><td width="90%"><input type="text"name="yourname" style="background:transparent; height:35px;border:1px solid #faa0b1; width: 200px" id="nam"/></td><td><span></span></td></tr>
 	
-<tr height=60px><td>验证码：</td><td width="40px"><input type="text"name="yourcode"style="background:transparent; height:35px;width:120px;border:1px solid #faa0b1"></td><td><img src="../img/code.png" height="40px" alt=""/></td></tr>
+<tr height=60px><td>电话号码：</td><td ><input type="text"name="yournumber"style="background:transparent; height:35px; border:1px solid #faa0b1;width: 200px" id="num"/></td><td><span></span></td></tr>
+	
+<tr height=60px><td>验证码：</td><td width="40px"><input type="text"name="yourcode"style="background:transparent; height:35px;width:120px;border:1px solid #faa0b1;width: 80px" id="yzm"><img src="../img/code.png" height="40px" alt="" style="float: right"/></td><td><span></span></td></tr>
 
-<tr height=60px><td>密码：</td><td colspan="2"><input type="password"name="yourpassword" style="background:transparent; height:35px;border:1px solid #faa0b1"/></td></tr>
+<tr height=60px><td>密码：</td><td><input type="password"name="yourpassword" style="background:transparent; height:35px;border:1px solid #faa0b1;width: 200px" id="pas"/></td><td><span></span></td></tr>
 
-<tr height=60px><td>确认密码：</td><td  colspan="2"><input type="password"name="yourcheck" style="background:transparent; height:35px;border:1px solid #faa0b1" /></td>
-</tr>
+<tr height=60px><td>确认密码：</td><td><input type="password"name="yourcheck" style="background:transparent; height:35px;border:1px solid #faa0b1;width: 200px" id="pas2"/></td><td><span></span></td></tr>
+	
 	</table>
 
-	<div class="finish">
-		完成注册
-	</div>
+	<input class="finish" type="button" value="完成注册" onclick="check()">
 			  </form>
 		  </div>
 		  		  <div class="footer">

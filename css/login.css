@@ -21,6 +21,7 @@ a:hover {color: #fff}
 	padding: 1% 0.8%;
 	border-radius: 10px;
 	cursor: pointer;
+	outline：none;
 }
 .finish:hover{
 	background-color: #fe718c;

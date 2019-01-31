@@ -37,27 +37,42 @@
 <script type="text/javascript">
 	var w=window.screen.availWidth;
 	$('.wrapper').css('width',w-17+"px");
+	
+	   function check(){ 
+	   		var flag=0;
+            var myform = document.getElementById("loginForm"); 
+	   		var aSpan=document.getElementsByTagName("span");
+	   for(var i=0;i<aSpan.length;i++){
+		   aSpan[i].innerHTML= "";
+	   }
+            for(var i=0;i<myform.length;i++){  //循环form表单
+				  //aSpan[i].innerHTML= "";
+                  if(myform.elements[i].value==""){
+					    aSpan[i].innerHTML= "*不能为空";
+                        myform.elements[i].focus(); 
+					  	flag++;
+                  }
+            }if(flag!=0)return;
+            myform.submit();
+      }
 
 </script>
 		  <div class="main">
 
-<form action="process.aspx"method="post">
+<form action="process.aspx"method="post" id="loginForm">
 <table align="center" width="100%"  style="font-size: 20px">
 <tr><td><img src="../img/user.png" width="7%" alt=""/></td></tr>
 
 <tr height=40px><td align="center"><hr style="width:65%;height:2px; background: #FFFFFF; border: none;"></td></tr>
 	
-<tr height=100px><td><input id="inputAttr1" class="inputAttr"  placeholder="请输入用户名"type="text"name="yourname"style="height:35px;width: 66%">
- </td></tr>
+<tr height=60px valign="bottom"><td><input id="inputAttr1" class="inputAttr"  placeholder="请输入用户名"type="text"name="yourname"style="height:35px;width: 66%">
+ </td></tr><tr valign="top"><td><span style="font-size: 15px;"></span></td></tr>
 
-<tr height=40px><td ><input id="inputAttr2" class="inputAttr" placeholder="请输入密码" type="password"name="yourpw" style=" height:35px; width: 66%"/></td></tr>
+<tr height=60px valign="bottom"><td ><input id="inputAttr2" class="inputAttr" placeholder="请输入密码" type="password"name="yourpw" style=" height:35px; width: 66%"/></td></tr><tr><td><span style="font-size: 15px;"></span></td></tr>
 
 
 	</table>
-
-	<div class="finish">
-		登陆
-	</div>
+	<input class="finish" type="button" value="登陆" onclick="check()">
 	<div class="forget">
 		<div class="forget_tr">
 			<div class="forget_td1"><a href="#">忘记密码?</a></div>
