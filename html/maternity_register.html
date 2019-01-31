@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="../css/register.css" rel="stylesheet" type="text/css" />
+<link href="../css/change_div.css" rel="stylesheet" type="text/css" />
+<link href="../css/common.css" rel="stylesheet" type="text/css" />
+<script src="../js/change_div.js"></script>
+<title>成为月嫂</title>
+</head>
+
+<body  bgcolor="#fcfbf6">
+<center>
+	  <div class="wrapper"  style=" background: #fcfbf6 ">
+		  <div class="header">
+				<div id="picture"><img src="../img/love.png" width="35%"  alt=""/></div>
+				<div id="SiteName">
+			    <table width="100%" >
+					<tr><td align="center"><font size="6em" color="#E97C91">富雅</font></td><td align="center" rowspan="2"  style="border-left:#E97C91 solid 0.1em;"><font size="4em">全心服务，用心呵护。</font></td></tr>
+					<tr><td align="center"><font size="0.1em" color="#E97C91">家庭服务</font></td></tr>
+					</table>
+			    </div>
+				<div id="number">全国统一服务热线：8888888888</div>
+		  </div>
+		  <a name="top">
+		  <div class="bar">
+			  <div class="bar_tr" >
+			  	<div class="bar_td">首页</div>
+				<div class="bar_td">富雅月嫂</div>
+				<div class="bar_td">月嫂机构</div>
+				<div class="bar_td">成为月嫂</div>
+				<div class="bar_td">人才招聘</div>
+				<div class="bar_td">母婴知识</div>
+				<div class="bar_td">注册</div>
+			  </div>
+			  </div></a>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/ft-carousel.min.js"></script>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+	var w=window.screen.availWidth;
+	$('.wrapper').css('width',w-17+"px");
+	$(function(){  
+     var fil=$("#fil1");  
+     $("<img>").insertAfter(".bottom");  
+     fil.bind('change',function(){  
+         var fordate=new FormData();  //得到一个FormData对象：
+         var fils=$("#fil1").get(0).files[0];  //得到file对象
+         console.log(fils);
+         fordate.append('pic',fils);  //用append方法添加键值对
+         var srcc=window.URL.createObjectURL(fils);     //传入的参数创建一个指向该参数对象的URL
+         console.log(srcc);   
+         $("#imgAD1").attr({'src':srcc,'width':180+'px','heigth':200+'px'});  
+         $.ajax({  //发送ajax请求
+              url: "index4.php",  
+              type: "post",  
+              data: fordate,  
+              processData : false,  
+              contentType : false,   
+              success: function(html){  
+                console.log(html);  
+              }  
+            });  
+
+     });  
+    }); 
+</script>
+		  
+<form action="process.aspx"method="post">		  
+<div class="main" >
+	
+	
+	<div class="change_div" id="b1">
+		<div class="change_div_content">
+	<div class="schedule">	
+	<div class="schedule1" style="color: #E97C91;"><div>基本信息</div><div class="label1" style="background-color: #E97C91;">1</div></div>
+	<div class="schedule2" ><div>相关证明</div><div class="label1">2</div></div>
+	<div class="schedule3" ><div>在线考试</div><div class="label1">3</div></div>
+			</div>
+
+<table style="font-size: 20px">
+<tr height=60px ><td width="40%">姓名：</td><td colspan="2"><input type="text"name="yourname" style="background:transparent; height:35px; border:1px solid #faa0b1"  /></td></tr>
+
+<tr height=60px><td>电话号码：</td><td  colspan="2"><input type="text"name="yournumber"style="background:transparent; height:35px; border:1px solid #faa0b1" /></td></tr>
+	
+<tr height=60px><td>验证码：</td><td width="40px"><input type="text"name="yourcode"style="background:transparent; height:35px;width:120px;border:1px solid #faa0b1"></td><td><img src="../img/code.png" height="40px" alt=""/></td></tr>
+
+<tr height=60px><td>身份证：</td><td colspan="2"><input type="text"name="yourcard" style="background:transparent; height:35px; border:1px solid #faa0b1"/></td></tr>
+
+<tr height=60px><td>年龄：</td><td  colspan="2"><input type="text"name="yourage" style="background:transparent; height:35px; border:1px solid #faa0b1" /></td>
+</tr>
+	
+<tr height=60px><td>文化：</td><td  colspan="2"><input type="text"name="youreducation" style="background:transparent; height:35px; border:1px solid #faa0b1" /></td>
+</tr>
+	
+<tr height=60px><td>籍贯：</td><td  colspan="2"><input type="text"name="yournative" style="background:transparent; height:35px; border:1px solid #faa0b1" /></td>
+</tr>
+	
+<tr height=60px><td>邮箱：</td><td  colspan="2"><input type="text"name="youremail" style="background:transparent; height:35px; border:1px solid #faa0b1" /></td>
+</tr>
+	
+<tr height=60px valign="bottom"><td>照片：</td><td  colspan="2"><div class="file-box" ><label for="upload-file">上传图片</label><input type="file" id="fil1" class="file-btn" name="upload-file"></div></td>
+</tr>
+	
+<tr height=250px ><td colspan="3"><div class="kuang1"><img alt="" src="" id="imgAD1" width="180px" height="200px"> </div></td></tr>
+	
+<tr height=60px><td>身高体重：</td><td width="40px"><input type="text"name="yourheight"style="background:transparent; height:35px;width:60px;border:1px solid #faa0b1">  cm</td><td><input type="text"name="yourwidth"style="background:transparent; height:35px;width:60px;border:1px solid #faa0b1">  kg</td></tr>
+	
+	</table>
+
+	<a href="#top"><div class="finish" onClick="change1()" >		
+		下一步
+	</div></a>
+		</div>
+			<div class="footer" style="font-weight: 50;font-size: 16px">
+			  <table cellspacing="5">
+				  <tr><td width="40%">
+			  富雅家庭服务有限公司</td>           
+					  <td>服务热线：8888888888
+					  </td></tr>
+				  <tr>
+				  <td colspan="2">富雅总部地址：广州越秀区广州大道中5号富雅大厦5层</td>
+				  </tr>
+				  <tr>
+				  <td colspan="2">天河直营店地址：广州天河区广州大道中5号富雅大厦5层</td>
+				  </tr>
+			  </table></div>	
+		  </div>
+		  
+	
+	<div class="change_div" id="b2" style="display: none">
+		<div class="change_div_content">
+	<div class="schedule">	
+	<div class="schedule1"><div>基本信息</div><div class="label1" >1</div></div>
+	<div class="schedule2" style="color: #E97C91;"><div>相关证明</div><div class="label1"style="background-color: #E97C91;">2</div></div>
+	<div class="schedule3" ><div>在线考试</div><div class="label1">3</div></div>
+			</div>
+
+<table style="font-size: 20px">
+<tr height=60px valign="bottom"><td width="40%">月嫂证：</td><td><div class="file-box" ><label for="upload-file">上传图片</label><input type="file" id="fil1" class="file-btn" name="upload-file"></div></td></tr>
+	
+<tr height=250px ><td colspan="2"><div class="kuang"><img alt="" src="" id="imgAD2" width="300px" height="200px"> </div></td></tr>
+
+<tr height=60px valign="bottom"><td>健康证：</td><td><div class="file-box" ><label for="upload-file">上传图片</label><input type="file" id="fil1" class="file-btn" name="upload-file"></div></td></tr>
+
+<tr height=250px ><td colspan="2"><div class="kuang"><img alt="" src="" id="imgAD3" width="300px" height="200px"> </div></td></tr>
+
+<tr height=60px valign="bottom"><td>服务图片：</td><td><div class="file-box" ><label for="upload-file">上传图片</label><input type="file" id="fil1" class="file-btn" name="upload-file"></div></td></tr>
+	
+<tr height=250px ><td colspan="2"><div class="kuang"><img alt="" src="" id="imgAD4" width="300px" height="200px"> </div></td></tr>
+	
+
+<tr height=60px valign="bottom"><td>体检报告：</td><td><div class="file-box" ><label for="upload-file">上传图片</label><input type="file" id="fil1" class="file-btn" name="upload-file"></div></td></tr>
+	
+<tr height=250px ><td colspan="2"><div class="kuang"><img alt="" src="" id="imgAD6" width="300px" height="200px"> </div></td></tr>
+	
+<tr height=60px><td>工资要求：</td><td><input type="text"name="_companyname" style="background:transparent; height:35px; border:1px solid #faa0b1" /></td>
+
+<tr height=60px><td>服务年限：</td><td><input type="text"name="_companyname" style="background:transparent; height:35px; border:1px solid #faa0b1" /></td>
+</tr>
+	
+<tr height=60px valign="bottom"><td>类型：</td><td>
+	<label class="test-label"><input type="radio"name="type"value="matermity" class="test-radio"/><span class="test-radioInput"></span>月嫂</label>
+	<label class="test-label"><input type="radio"name="type"value="nurse" class="test-radio"/><span class="test-radioInput"></span>育婴师</label></td></tr>
+	
+
+
+	
+	
+	</table>
+<div class="bottom">
+	<div class="bar_tr">
+	<div class="bottom_td" onClick="change2()" >	
+		<a href="#top" style="color: aliceblue">上一步</a>
+		</div>
+	<div class="bottom_td" onClick="change3()">
+		<a href="#top" style="color: aliceblue">下一步</a>
+	</div>
+		</div>
+</div>
+
+		  </div>	
+					<div class="footer"  style="font-weight: 50;font-size: 16px">
+			  <table cellspacing="5">
+				  <tr><td width="40%">
+			  富雅家庭服务有限公司</td>           
+					  <td>服务热线：8888888888
+					  </td></tr>
+				  <tr>
+				  <td colspan="2">富雅总部地址：广州越秀区广州大道中5号富雅大厦5层</td>
+				  </tr>
+				  <tr>
+				  <td colspan="2">天河直营店地址：广州天河区广州大道中5号富雅大厦5层</td>
+				  </tr>
+			  </table></div>
+</div>
+	
+	
+	
+	<div class="change_div" id="b3" style="display: none">
+		<div class="change_div_content">
+	<div class="schedule">	
+	<div class="schedule1"><div>基本信息</div><div class="label1" >1</div></div>
+	<div class="schedule2" ><div>相关证明</div><div class="label1">2</div></div>
+	<div class="schedule3" style="color: #E97C91;"><div>在线考试</div><div class="label1"style="background-color: #E97C91;">3</div></div>
+			</div>
+			
+	<table class="question">
+		<tr><td colspan="4">1、单选题【2分】</td></tr>
+		<tr><td colspan="4">以下哪个是水果？</td></tr>
+		<tr><td><label class="test-label"><input type="radio"name="answer1"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer1"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer1"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer1"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td></tr>
+			</table>
+			
+		<table class="question">
+		<tr><td colspan="4">1、单选题【2分】</td></tr>
+		<tr><td colspan="4">以下哪个是水果？</td></tr>
+		<tr><td><label class="test-label"><input type="radio"name="answer2"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer2"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer2"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer2"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td></tr>
+			</table>
+			
+		<table class="question">
+		<tr><td colspan="4">1、单选题【2分】</td></tr>
+		<tr><td colspan="4">以下哪个是水果？</td></tr>
+		<tr><td><label class="test-label"><input type="radio"name="answer3"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer3"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer3"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td>
+		<td><label class="test-label"><input type="radio"name="answer3"value="apple" class="test-radio"/><span class="test-radioInput"></span>苹果</label></td></tr>
+			</table>
+
+<div class="bottom">
+	<div class="bar_tr">
+	<div class="bottom_td" onClick="change1()" >	
+		<a href="#top" style="color: aliceblue">上一步</a>
+		</div>
+	<div class="bottom_td">
+		完成
+	</div>
+		</div>
+</div>
+
+		  </div>	
+					<div class="footer"  style="font-weight: 50;font-size: 16px">
+			  <table cellspacing="5">
+				  <tr><td width="40%">
+			  富雅家庭服务有限公司</td>           
+					  <td>服务热线：8888888888
+					  </td></tr>
+				  <tr>
+				  <td colspan="2">富雅总部地址：广州越秀区广州大道中5号富雅大厦5层</td>
+				  </tr>
+				  <tr>
+				  <td colspan="2">天河直营店地址：广州天河区广州大道中5号富雅大厦5层</td>
+				  </tr>
+			  </table></div>
+</div>
+	
+	
+	
+		  </div></form>
+
+	  
+	</div>
+</center>	
+	
+</body>
+</html>
+

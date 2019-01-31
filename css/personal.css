@@ -1,0 +1,91 @@
+/* CSS Document */
+.main{
+	width:80%;
+	background-color: #fff;
+	font-size: 16px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;
+	vertical-align: middle;
+	font-weight:400;
+	font-family: "Microsoft YaHei", Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+}
+.bar_left{
+	width:15%;
+	background-color:#f7bcaf; 
+	height:100%;
+	float: left;
+	height:800px;
+}
+.bar_left_kuang{
+	width:85%;
+	height:110px;
+	border: 2px solid #fff;
+	margin:10% 0 15% 0 ;
+}
+.bar_left_item{
+	width:30%;
+	padding: 5% 35%;
+	text-align: left;
+	cursor: pointer;
+	height: 20px;
+	background-color:#f7bcaf ;
+	vertical-align:middle;
+}
+#form{
+	background:  url(../img/dingdan.png) no-repeat 20%;
+	background-size:10%;
+}
+#infor{
+	background:  url(../img/gongsi.png) no-repeat 20%;
+	background-size:10%;
+}
+#nurse{
+	background:  url(../img/yuesao.png) no-repeat 20%;
+	background-size:10%;
+}
+#form:hover{
+	background-color: #f07053;
+}
+#infor:hover{
+	background-color: #f07053;
+}
+#nurse:hover{
+	background-color: #f07053;
+}
+#n_infor:hover{
+	background-color: #f07053;
+}
+#n_recruit:hover{
+	background-color: #f07053;
+}
+.more{
+	background:  url(../img/more.png) no-repeat center;
+	width:30px;
+	height:13px;
+	display:inline-block;
+	background-size:55%;
+	margin-left: 14%;
+}
+select{
+	
+}
+
+.form{
+	width:75%;
+	height:500px;
+	background-color: aqua;
+	margin:4% 20%;
+	text-align: left;
+}
+.form_top{
+	width:10%;
+	padding:1% 2%;
+	background-color: #f07053;
+	text-align: center;
+}
+.form_search{
+	border-top:4px solid #f07053;
+	width:100%;
+}
